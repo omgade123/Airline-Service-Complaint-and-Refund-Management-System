@@ -48,10 +48,40 @@ Before you begin, make sure you have the following installed:
    - The backend server will start running and should be accessible at `localhost:8181`.
 
 4. **Configure MySQL Database**:
-   - Open **MySQL Workbench** and ensure you have a database named `complaintManagement`. If not, create it by running the following SQL command:
-     ```sql
-     CREATE DATABASE complaintManagement;
-     ```
+   
+To set up the database for the project, you'll need to import the provided `AirCareDB.sql` file into MySQL Workbench. Follow these steps:
+
+
+### 1. Open the Data Import Wizard
+- In the top menu, navigate to **Server > Data Import**.
+- This will open the **Data Import/Restore** tab, where you can specify the source of the SQL file and the target schema.
+
+### 2. Select the SQL File to Import
+- Under the **Import Options** section, choose **Import from Self-Contained File**.
+- Click on the **Browse** button and navigate to the location of your `AirCareDB.sql` file. Select the file and confirm your selection.
+
+### 3. Choose the Target Schema
+- In the **Default Target Schema** dropdown, select the database into which you want to import the SQL file.
+  - If the `complaintManagement` database already exists, select it from the list.
+  - If the database doesn't exist, you can create it:
+    - Click on the **New...** button next to the dropdown.
+    - Enter `complaintManagement` as the new schema name and click **Apply** to create the database.
+
+### 4. Start the Import Process
+- Once you've selected the target schema, click on the **Start Import** button located at the bottom right of the window.
+- MySQL Workbench will begin importing the SQL file. The progress will be displayed in the window.
+- Wait for the process to complete. Once finished, you should see a message indicating the import was successful.
+
+### 5. Verify the Imported Database
+- In the **Navigator** panel on the left side of MySQL Workbench, click on the **Refresh** button (circular arrow icon) to reload the list of schemas.
+- Expand the `complaintManagement` schema to view the imported tables and data.
+
+By following these steps, you'll have successfully imported the `AirCareDB.sql` file into MySQL Workbench, setting up the necessary database for the project.
+
+
+
+2. **Check Database Connection**:
+   - After running the backend in Eclipse, the application will connect to the `complaintManagement` database. If the connection fails, double-check your credentials in the `application.properties` file and ensure MySQL is running.
    - In Eclipse, navigate to `src/main/resources/application.properties` and update your **MySQL username** and **password** like so:
      ```properties
      spring.datasource.url=jdbc:mysql://localhost:3306/complaintManagement
@@ -80,50 +110,10 @@ Before you begin, make sure you have the following installed:
 
 ---
 
-## Step 3: Database Setup (MySQL)
 
-To set up the database for the project, you'll need to import the provided `AirCareDB.sql` file into MySQL Workbench. Follow these steps:
 
-### 1. Open MySQL Workbench and Connect to Your Database Server
-- Launch **MySQL Workbench**.
-- Establish a connection to your MySQL server instance. If you haven't set up a connection yet, click on the **+** icon next to "MySQL Connections" to create a new connection. Enter the necessary credentials (hostname, port, username, and password) and test the connection to ensure it's successful.
 
-### 2. Open the Data Import Wizard
-- In the top menu, navigate to **Server > Data Import**.
-- This will open the **Data Import/Restore** tab, where you can specify the source of the SQL file and the target schema.
-
-### 3. Select the SQL File to Import
-- Under the **Import Options** section, choose **Import from Self-Contained File**.
-- Click on the **Browse** button and navigate to the location of your `AirCareDB.sql` file. Select the file and confirm your selection.
-
-### 4. Choose the Target Schema
-- In the **Default Target Schema** dropdown, select the database into which you want to import the SQL file.
-  - If the `complaintManagement` database already exists, select it from the list.
-  - If the database doesn't exist, you can create it:
-    - Click on the **New...** button next to the dropdown.
-    - Enter `complaintManagement` as the new schema name and click **Apply** to create the database.
-
-### 5. Start the Import Process
-- Once you've selected the target schema, click on the **Start Import** button located at the bottom right of the window.
-- MySQL Workbench will begin importing the SQL file. The progress will be displayed in the window.
-- Wait for the process to complete. Once finished, you should see a message indicating the import was successful.
-
-### 6. Verify the Imported Database
-- In the **Navigator** panel on the left side of MySQL Workbench, click on the **Refresh** button (circular arrow icon) to reload the list of schemas.
-- Expand the `complaintManagement` schema to view the imported tables and data.
-
----
-
-By following these steps, you'll have successfully imported the `AirCareDB.sql` file into MySQL Workbench, setting up the necessary database for the project.
-
-If you encounter any issues during the import process or need further assistance, feel free to ask!
-
-2. **Check Database Connection**:
-   - After running the backend in Eclipse, the application will connect to the `complaintManagement` database. If the connection fails, double-check your credentials in the `application.properties` file and ensure MySQL is running.
-
----
-
-## Step 4: How to Run the Project
+## Step 5: How to Run the Project
 
 ### 1. **Running the Backend**:
    - After completing the backend setup in Eclipse, locate the class `AirCareProjectApplication.java` under `com.capgemini.AirCareProject` in Eclipse.
