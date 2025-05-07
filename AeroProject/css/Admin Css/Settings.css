@@ -1,0 +1,125 @@
+/* Settings.css */
+
+/* Basic page and navbar styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  padding-top: 70px;
+}
+
+.admin-nav {
+  background-color: #0A2C78;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Custom Settings Tab Navigation */
+.custom-navbar {
+  background-color: rgb(226, 226, 226);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.settings-tab-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings-tab-item:hover {
+  background-color: #eaecef;
+}
+
+.settings-tab-item.active {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Tab content */
+.tab-content-section {
+  display: none;
+}
+
+.tab-content-section.active {
+  display: block;
+}
+
+/* Form Styling */
+.card label {
+  font-weight: 500;
+}
+
+.submit-btn {
+  background-color: #0A2C78;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: end;
+}
+
+.submit-btn:hover {
+  background-color: #1c70b1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .settings-tab-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 50px;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+  
+  .submit-btn {
+    font-size: 14px;
+  }
+}

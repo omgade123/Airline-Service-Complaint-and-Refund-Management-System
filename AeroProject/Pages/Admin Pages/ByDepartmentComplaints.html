@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Complaints by Department</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .btn-group .btn {
+      min-width: 180px;
+      font-weight: 500;
+    }
+
+    .btn-group .btn:hover {
+      background-color: #b9b9b9;
+      color: rgb(0, 0, 0);
+    }
+
+    table {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    thead {
+      background-color: #e9ecef;
+      color: #343a40;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    th, td {
+      vertical-align: middle !important;
+    }
+  </style>
+</head>
+<body class="container my-4" onload="loadDeptComplaints('D001')">  
+ <!-- when i click on bydepartment autmaticall go to flight Operations -->
+
+  <h3>Complaints by Department</h3>
+
+  <div class="btn-group d-flex flex-wrap justify-content-center mb-4" style="background-color: #cccccc;" role="group">
+    
+    <button onclick="loadDeptComplaints('D001')" class="btn  m-1" >Flight Operations</button>
+    <button onclick="loadDeptComplaints('D004')" class="btn  m-1">Check-in & Boarding</button>
+    <button onclick="loadDeptComplaints('D002')" class="btn  m-1">Baggage Services</button>
+    <button onclick="loadDeptComplaints('D003')" class="btn  m-1">In-flight Experience</button>
+  </div>
+<div class="">
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th>ComplaintID</th>
+        <th>User</th>
+        <th>Complaint Type</th>
+        <th>Description</th>
+        <th>Date Filed</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="departmentComplaintTableBody">
+
+    </tbody>
+  </table>
+</div>
+
+  <script src="/AeroProject/js/ByDepartmentComplaints.js"></script>
+  
+</body>
+</html>

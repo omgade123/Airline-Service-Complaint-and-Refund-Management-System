@@ -1,0 +1,150 @@
+body {
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-nav {
+  background-color: #0A2C78;
+  padding: 0.75rem 1.5rem;
+}
+
+.admin-nav .nav-link {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.admin-nav .nav-link:hover,
+.admin-nav .nav-link.active {
+  text-decoration: underline;
+  color: #00BFFF;
+  transition: width 0.3s ease;
+}
+.admin-nav .nav-link:hover::after,
+.admin-nav .nav-link.active::after {
+  transition: width 0.3s ease;
+  text-decoration: underline;
+}
+
+.admin-main {
+  padding: 2rem;
+}
+.admin1:hover{
+  background-color: #e2e2e2;
+  color: #000;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.status-card h5 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.status-card h3 {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.chart-header h5 {
+  margin: 0;
+}
+.small-pie {
+ 
+    width: 100%;
+    height: 300px !important; /* Controls fixed height */
+    margin: auto;
+  }
+  .chart-card {
+    min-height: 400px;
+  }
+   .select{
+    box-shadow: #dcd9da 1px 1px 1px 1px !important;
+   }
+   .blank-card {
+    background-color: #fff;
+    padding: 1rem;
+     margin-top: 9px;
+  
+  }
+  .btn-outline-secondary {
+    text-decoration: none;
+    background-color: #F3F7FB;
+    border: #cdd1d6 1px solid;
+    text-size-adjust: 0.9rem;
+    text-decoration-thickness: 5rem;
+    color: black;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    color: black;
+  }
+  .btn-outline-secondary:hover {
+    background-color: #d6e0e8;
+    color: #000;
+    border-color: #cdd1d6;
+  }
+
+  .cardo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 300px;
+  }
+  
+  .cardo-content h3 {
+    margin: 0;
+    color: #4b5563; /* Tailwind's gray-700 */
+    font-weight: 500;
+  }
+  
+  .counto {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    margin: 5px 0;
+  }
+  
+  .trendo {
+    color: green;
+    font-size: 0.9rem;
+  }
+  
+  .icono {
+    background: #e0f0ff; /* light blue circle */
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .icono img {
+    align-self: center;
+    height: 24px;
+    width: 24px;
+  }
+  
+
+
+@media (max-width: 768px) {
+  .admin-nav .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .admin-main {
+    padding: 1rem;
+  }
+}

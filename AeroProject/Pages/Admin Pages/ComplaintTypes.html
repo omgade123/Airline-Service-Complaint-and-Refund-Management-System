@@ -1,0 +1,48 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<div class="card shadow-sm p-4" style="margin-top: 40px;">
+  <div style="margin-top: 10px;"><h2 class="mb-4">Complaint Type Management</h2></div>
+
+
+  <form id="complaintTypeForm" class="mb-4">
+    <div class="mb-3">
+      <label for="complaintType" class="form-label">Complaint Type</label>
+      <input type="text" class="form-control" id="complaintType" required>
+      <div class="invalid-feedback">At least 5 characters required.</div>
+    </div>
+    <div class="mb-3">
+      <label for="sdepartments" class="form-label">Department</label>
+      <select class="form-select" id="departments" required>
+        <option value="" disabled selected>Department</option>
+        <option id="D001" value="Flight Operations">Flight Operations</option>
+        <option id="D002" value="Baggage Services">Baggage Services</option>
+        <option id="D003" value="In-flight Experience">In-flight Experience</option>
+        <option id="D004" value="Check-in & Boarding">Check-in & Boarding</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="severity" class="form-label">Severity</label>
+      <select class="form-select" id="severity" required>
+        <option value="" disabled selected>Select Severity</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+    <button id="submitBtn" type="submit" class="btn btn-primary" style="background-color: aliceblue; color: black;">Add Complaint Type</button>
+  </form>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Complaint Type ID</th>
+        <th>Complaint Type</th>
+        <th>Severity <i class="bi bi-arrow-down-up"></i></th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="complaintTableBody"></tbody>
+  </table>
+</div>
+
+<script src="/AeroProject/js/complaintTypes.js"></script>

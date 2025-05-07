@@ -1,0 +1,163 @@
+<body class="container my-5">
+ <div style="margin-top: -70px;">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <div>
+    <div class="card shadow-sm p-4" style="margin-top: 40px;">
+      <div style="margin-top: 10px;">
+        <h2 class="mb-4">Edit Department</h2>
+      </div>
+
+      <!-- Edit Department Form -->
+      <form id="departmentForm" class="mb-4">
+        <div class="mb-3">
+          <label for="departmentName" class="form-label">Department Name</label>
+          <input type="text" class="form-control" id="departmentName" required>
+          <div class="invalid-feedback">Please enter the department name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="departmentContact" class="form-label">Contact</label>
+          <input type="text" class="form-control" id="departmentContact" required>
+          <div class="invalid-feedback">Please enter a valid contact number.</div>
+        </div>
+        <button type="submit" id="submitEditBtn" class="btn btn-primary" style="background-color: aliceblue; color: black;">Update Department</button>
+        
+      </form>
+
+      <!-- Table for Departments -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Department ID</th>
+            <th>Department Name</th>
+            <th>Contact</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="departmentTableBody"></tbody>
+      </table>
+    </div>
+
+    <link rel="stylesheet" href="/AeroProject/css/Admin Css/Dashboard.css" />
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-12" style="margin-top: 10px;">
+        <h1 class="page-title">Departments</h1>
+        <p class="page-subtitle">Manage departments and view their complaint statistics</p>
+      </div>
+    </div>
+  
+
+   <link rel="stylesheet" href="/AeroProject/css/Admin Css/Dashboard.css" />
+
+    <div class="container-fluid departments-container" id="departmentsContainer"></div>
+      
+    
+      <div class="row">
+        <div class="col-md-6">
+          <div class="department-card">
+            <div class="department-header">
+              <h2>Flight Operations</h2>
+              <p>Manages flight-related complaints and operational issues</p>
+            </div>
+            <div class="department-stats">
+              <div class="stat-item">
+                <span class="stat-number">62</span>
+                <span class="stat-label">Total Complaints</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">18</span>
+                <span class="stat-label">Pending</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-percent">71%</span>
+                <span class="stat-label">Resolution Rate</span>
+              </div>
+            </div>
+            <button onclick="loadPage('Complaints.html')"  style="background-color: rgb(197, 216, 231); border: 0%;">View Complaints</button>
+
+
+          </div>
+        </div>
+    
+        <div class="col-md-6">
+          <div class="department-card">
+            <div class="department-header">
+              <h2>Check-in & Boarding Services</h2>
+              <p>Handles check-in process and boarding related complaints</p>
+            </div>
+            <div class="department-stats">
+              <div class="stat-item">
+                <span class="stat-number">42</span>
+                <span class="stat-label">Total Complaints</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">14</span>
+                <span class="stat-label">Pending</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-percent">69%</span>
+                <span class="stat-label">Resolution Rate</span>
+              </div>
+            </div>
+            <button onclick="loadPage('Complaints.html#ByDepartmentComplints')"  style="background-color: rgb(197, 216, 231); border: 0%;">View Complaints</button>
+
+          </div>
+        </div>
+      </div>
+    
+      <div class="row mt-4" style="margin-top: -50px;">
+        <div class="col-md-6">
+          <div class="department-card">
+            <div class="department-header">
+              <h2>Baggage Services</h2>
+              <p>Handles baggage loss, damage, and delayed luggage complaints</p>
+            </div>
+            <div class="department-stats">
+              <div class="stat-item">
+                <span class="stat-number">48</span>
+                <span class="stat-label">Total Complaints</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">15</span>
+                <span class="stat-label">Pending</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-percent">68%</span>
+                <span class="stat-label">Resolution Rate</span>
+              </div>
+            </div>
+            <button onclick="loadPage('Complaints.html#ByDepartmentComplints')"  style="background-color: rgb(197, 216, 231); border: 0%;">View Complaints</button>
+
+          </div>
+        </div>
+    
+        <div class="col-md-6">
+          <div class="department-card">
+            <div class="department-header">
+              <h2>In-flight Experience</h2>
+              <p>Manages complaints related to in-flight services and passenger comfort</p>
+            </div>
+            <div class="department-stats">
+              <div class="stat-item">
+                <span class="stat-number">25</span>
+                <span class="stat-label">Total Complaints</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Pending</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-percent">72%</span>
+                <span class="stat-label">Resolution Rate</span>
+              </div>
+            </div>
+            <button onclick="loadPage('Complaints.html#ByDepartmentComplints')"  style="background-color: rgb(197, 216, 231); border: 0%;">View Complaints</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/AeroProject/js/Departments.js"></script>
+  
+</body>

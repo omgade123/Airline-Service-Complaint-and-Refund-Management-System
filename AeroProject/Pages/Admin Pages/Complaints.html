@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complaint Management</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="/AeroProject/css/Admin Css/Complaint.css" />
+
+  <style>
+    .tab-btn {
+      margin-right: 10px;
+      padding: 10px 20px;
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .tab-btn.active {
+      background-color: #e9ecef;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body class="container my-5">
+
+  <div class="complaint-container" style="margin-top: 5px;">
+    <h1>Complaint Management</h1>
+
+    <div class="tabs mb-3">
+      <button class="tab-btn active" onclick="loadTab('Allcomplaint.html', this)">All Complaints</button>
+      <button class="tab-btn" onclick="loadTab('ByDepartmentComplaints.html', this)">Complaints by Department</button>
+    </div>
+
+    <iframe id="tabFrame" src="/AeroProject/Pages/Admin Pages/Allcomplaint.html"></iframe>
+  </div>
+
+  <script>
+    function loadTab(pageUrl, clickedBtn) {
+
+      const allButtons = document.querySelectorAll(".tab-btn");
+      allButtons.forEach(btn => btn.classList.remove("active"));
+      clickedBtn.classList.add("active");
+
+      document.getElementById("tabFrame").src = pageUrl;
+    }
+  </script>
+ 
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AirCare Admin Dashboard</title>
+  <link rel="stylesheet" href="/AeroProject/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/AeroProject/css/Admin Css/Admin.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+   <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg shadow-sm fixed-top admin-nav">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand text-white fw-bold" href="/AeroProject/Pages/Admin Pages/admin.html">AirCare Admin</a>
+      <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadPage('admin.html')">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadPage('Departments.html')">Departments</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadPage('Complaints.html')">Complaints</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadPage('Users.html')">Users</a></li> 
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadPage('Reports.html')" >Reports</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadPage('ComplaintTypes.html')">Complaint Types</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadPage('Settings.html')">Settings</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/AeroProject/Pages/Login and Registration/index.html">Logout -></a></li>
+        
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+  <div id="main-content" class="container-fluid admin-main pt-5">
+  <div class="container-fluid admin-main pt-5 ">
+    <div class="py-3 border-bottom">
+      <h3>AirCare Admin Portal</h3>
+      <p class="text-muted">Overview of all complaint activities and metrics</p>
+    </div>
+
+    <!-- Summary Cards -->
+ <div class="row text-center">
+            <div class="col-md-3">
+                <div class="card status-card">
+                    <div class="card-body">
+                        <h4 id="total-complaints">0</h4>
+                        <p>Total Complaints</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card status-card">
+                    <div class="card-body text-warning">
+                        <h4 id="pending-complaints">0</h4>
+                        <p>Pending</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card status-card">
+                    <div class="card-body text-primary">
+                        <h4 id="inprogress-complaints">0</h4>
+                        <p>In Progress</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card status-card">
+                    <div class="card-body text-success">
+                        <h4 id="resolved-complaints">0</h4>
+                        <p>Resolved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+    
+    <!-- Charts -->
+    <div class="row g-4 mt-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm chart-card">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <h5 class="card-title mb-0">Complaint Status</h5>
+              
+            </div>
+            <canvas id="complaintChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm chart-card">
+          <div class="card-body">
+            <h5 class="card-title">Complaint Types</h5>
+            <canvas id="typeChart" class="small-pie"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+     <canvas id="complaintChart1"></canvas>
+</div>
+  </div>
+</div>
+    
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/AeroProject/js/pageloader.js"></script>
+  <script src="/AeroProject/js/admincharts.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+
+  
+  <link rel="stylesheet" href="/AeroProject/css/Admin Css/Reports.css" />
+  <div style="margin-top: 10px;">
+  <h1 style="margin-left: 100px;">Admin - Complaint Reports</h1>
+
+
+  <section class="report-section">
+    <h2> Flight Operations - Report</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Complaint Type</th>
+          <th>Pending</th>
+          <th>Resolved</th>
+        </tr>
+      </thead>
+      <tbody id="flight-operations-table"></tbody>
+    </table>
+  </section>
+
+  <section class="report-section">
+    <h2> Check-in & Boarding Services - Report</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Complaint Type</th>
+          <th>Pending</th>
+          <th>Resolved</th>
+        </tr>
+      </thead>
+      <tbody id="check-in-and-boarding-services-table"></tbody>
+    </table>
+  </section>
+
+
+  <section class="report-section">
+    <h2> Baggage Services - Report</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Complaint Type</th>
+          <th>Pending</th>
+          <th>Resolved</th>
+        </tr>
+      </thead>
+      <tbody id="baggage-services-table"></tbody>
+    </table>
+  </section>
+
+ 
+  <section class="report-section">
+    <h2> In-flight Experience - Report</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Complaint Type</th>
+          <th>Pending</th>
+          <th>Resolved</th>
+        </tr>
+      </thead>
+      <tbody id="inflight-experience-table"></tbody>
+    </table>
+  </section>
+ <script>
+  fetch('http://localhost:8181/api/complaints')
+  .then(response => response.json())
+  .then(complaints => {
+    Promise.all([
+      fetch('http://localhost:8181/api/department').then(response => response.json()),
+      fetch('http://localhost:8181/api/complaintTypes').then(response => response.json())
+    ])
+    .then(([departments, complaintTypes]) => {
+      departments.forEach(department => {
+        const departmentComplaints = complaints.filter(
+          complaint => complaint.DeptID === department.DeptID
+        );
+
+        const departmentName = department.Name;
+        const tableId = departmentName.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-table';
+
+        console.log(`---\nDepartment: ${departmentName}`);
+        console.log(`Table ID: ${tableId}`);
+        console.log(`Matching complaints: ${departmentComplaints.length}`);
+
+        populateTable(tableId, departmentComplaints, complaintTypes, departmentName);
+      });
+    })
+    .catch(error => console.error('Error fetching department or complaint type data:', error));
+  })
+  .catch(error => console.error('Error fetching complaints data:', error));
+
+ </script>
+  <script src="/AeroProject/js/Reports.js"></script>
+</div>

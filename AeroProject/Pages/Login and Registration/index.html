@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AirCare Login</title>
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="/AeroProject/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/AeroProject/css/Login and Registration/login.css" />
+</head>
+<body>
+  <div>
+    <img src="" alt="">
+  <div class="container login-container">
+    <div class="logo text-center">
+      <div class="icon">✈️</div>
+      <h1>AirCare</h1>
+      <p>Dashboard for Airline Travel Complaint & Refund Management</p>
+    </div>
+
+    <div class="login-box mx-auto">
+   
+      <ul class="nav nav-tabs mb-3 justify-content-center" id="loginTabs">
+        <li class="nav-item">
+          <a class="nav-link active"  data-bs-toggle="tab" href="#admin">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  data-bs-toggle="tab" href="#user">User</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+      
+        <div class="tab-pane fade show active" id="admin">
+          <h2>Admin Login</h2>
+          <p class="subheading">Enter your admin credentials</p>
+          <form id="admin-login-form" onsubmit="return loginHandler(event, 'admin')">
+
+            <label for="admin-email">Email</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">✉</span>
+              <input type="email" id="admin-email" class="form-control" placeholder="admin@aircare.com" />
+            </div>
+
+            <label for="admin-password">Password</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" style="padding-left: 6px;"> 🔒</span>
+              <input type="password" id="admin-password" class="form-control" placeholder="Password" />
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+              <a href="#" class="forgot" style="color: white;">Forgot password?</a>
+              
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 login-btn">Login</button>
+          </form>
+          <p class="demo mt-3"><b>© 2025 AirCare Login Form. All rights reserved</b></p>
+          
+        </div>
+
+     
+        <div class="tab-pane fade" id="user">
+          <h2>User Login</h2>
+          <p class="subheading">Enter your user credentials</p>
+          <form id="user-login-form" onsubmit="return loginHandler(event, 'user')">
+
+            <label for="user-email">Email</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">✉</span>
+              <input type="email" id="user-email" class="form-control" placeholder="user@example.com" />
+            </div>
+
+            <label for="user-password">Password</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">🔒</span>
+              <input type="password" id="user-password" class="form-control" placeholder="Password" />
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+              <a href="#" class="forgot"></a>
+              <a href="/AeroProject/Pages/Login and Registration/registration.html" class="register-link">New User? Register here</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 login-btn">Login</button>
+
+
+          </form>
+          <p class="demo mt-3"><b>© 2025 AirCare Login Form. All rights reserved</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+>
+<script src="/AeroProject/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="/AeroProject/js/login.js"></script>
+  
+</div>
+</body>
+</html>

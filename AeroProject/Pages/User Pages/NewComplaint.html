@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Complaint</title>
+  <style>
+    body {
+  padding-top: 60px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container" style="margin-top: -75px; max-width: 800px;">
+    <h4>File a New Complaint</h4>
+    <p>Submit your complaint and we'll address it as soon as possible.</p>
+
+    <div class="card shadow-sm p-4">
+      <h4 class="mb-2"><strong>📄 Complaint Details</strong></h4>
+      <p>Please provide detailed information about your complaint.</p>
+
+      <form id="complaintForm">
+        <!-- Complaint Type Dropdown -->
+        <div class="mb-3">
+          <label for="complaintType" class="form-label">Complaint Type</label>
+          <select class="form-select" id="complaintType" required>
+      
+          </select>
+        </div>
+
+        <!-- Department Dropdown -->
+        <div class="mb-3">
+          <label for="department" class="form-label">Department</label>
+          <select class="form-select" id="department" required>
+
+          </select>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" id="description" rows="4" required placeholder="Describe your complaint in detail..."></textarea>
+        </div>
+
+        <!-- Date -->
+        <div class="mb-3">
+          <label for="dateFiled" class="form-label">Date of Filing</label>
+          <input class="form-control" type="date" id="dateFiled" required />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit Complaint</button>
+      </form>
+    </div>
+  </div>
+  <script>
+
+  
+    
+
+  </script>
+  <script src="/AeroProject/js/NewComplaints.js"></script>
+
+</body>
+
+</html>
